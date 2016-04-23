@@ -12,4 +12,4 @@ Adds syntax highlighting and snippets to 'ignore' files.
 - `.coffeelintignore`: works just like a `.gitignore`
 - `.slugignore`: [Heroku](https://devcenter.heroku.com/articles/slug-compiler#ignoring-files-with-slugignore)
 
-**TODO**: add screenshots
+![language-ignore-gitignore](https://cloud.githubusercontent.com/assets/5674651/14763858/4ae7eae4-09a3-11e6-9adf-94f3d5cdf1d6.png)
