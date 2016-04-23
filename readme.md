@@ -18,7 +18,7 @@ Adds syntax highlighting to 'ignore' files.
 
 ## Install
 
-- Settings/Preferences > Install > Search for `language-ignore`
+Settings/Preferences > Install > Search for `language-ignore`
 
 Or
 
