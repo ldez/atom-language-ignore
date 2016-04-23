@@ -10,5 +10,6 @@ Adds syntax highlighting and snippets to 'ignore' files.
 - `.gitignore`: [gitignore](https://git-scm.com/docs/gitignore) and [Ignoring-Files](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files)
 - `.npmignore`: [Syntax](https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package)
 - `.coffeelintignore`: works just like a `.gitignore`
+- `.slugignore`: [Heroku](https://devcenter.heroku.com/articles/slug-compiler#ignoring-files-with-slugignore)
 
 **TODO**: add screenshots

@@ -4,12 +4,10 @@
   "description": "Syntax highlighting and snippets for 'ignore' files",
   "keywords": [
     "ignore",
-    "git",
     "gitignore",
-    "npm",
     "npmignore",
-    "coffeescript",
-    "coffeelint"
+    "coffeelintignore",
+    "slugignore"
   ],
   "repository": "https://github.com/ldez/atom-language-ignore.git",
   "license": "MIT",
