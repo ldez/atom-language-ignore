@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/ldez/atom-language-ignore.svg?branch=master)](https://travis-ci.org/ldez/atom-language-ignore)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/bsara/language-gitignore/blob/master/LICENSE.md)
 
-Adds syntax highlighting and snippets to 'ignore' files.
+Adds syntax highlighting to 'ignore' files.
 
 ![language-ignore-gitignore](https://cloud.githubusercontent.com/assets/5674651/14763858/4ae7eae4-09a3-11e6-9adf-94f3d5cdf1d6.png)
 
