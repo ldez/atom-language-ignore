@@ -37,6 +37,10 @@
         'match': '/'
       }
       {
+        'name': 'variable.character.escape.ignore'
+        'match': '\\\\'
+      }
+      {
         'name': 'range.ignore'
         'match': '(\\[)([\\w-]+)(\\])'
         'captures':
