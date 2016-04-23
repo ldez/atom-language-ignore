@@ -1,0 +1,3 @@
+'.text.ignore':
+  'editor':
+    'commentStart': '# '
