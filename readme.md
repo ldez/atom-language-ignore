@@ -7,9 +7,21 @@
 
 Adds syntax highlighting and snippets to 'ignore' files.
 
+![language-ignore-gitignore](https://cloud.githubusercontent.com/assets/5674651/14763858/4ae7eae4-09a3-11e6-9adf-94f3d5cdf1d6.png)
+
+## Supported files
+
 - `.gitignore`: [gitignore](https://git-scm.com/docs/gitignore) and [Ignoring-Files](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files)
 - `.npmignore`: [Syntax](https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package)
 - `.coffeelintignore`: works just like a `.gitignore`
-- `.slugignore`: [Heroku](https://devcenter.heroku.com/articles/slug-compiler#ignoring-files-with-slugignore)
+- `.slugignore`: [Heroku - Slug Compiler](https://devcenter.heroku.com/articles/slug-compiler#ignoring-files-with-slugignore)
 
-![language-ignore-gitignore](https://cloud.githubusercontent.com/assets/5674651/14763858/4ae7eae4-09a3-11e6-9adf-94f3d5cdf1d6.png)
+## Install
+
+- Settings/Preferences > Install > Search for `language-ignore`
+
+Or
+
+```bash
+apm install language-ignore
+```
