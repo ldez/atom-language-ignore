@@ -30,3 +30,5 @@ path/**/file[a-b].txt
 /path/*.txt
 /path/**/*.txt
 /path/**/file[a-b].txt
+file\ with\ space.txt
+\#fileWithHash.txt

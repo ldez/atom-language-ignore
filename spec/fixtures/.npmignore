@@ -9,6 +9,7 @@ path/[a-z]/path/
 /path/*/
 /path/**/path/
 /path/[a-z]/path/
+path/!path/
 
 # Files
 file
@@ -30,6 +31,10 @@ path/**/file[a-b].txt
 /path/*.txt
 /path/**/*.txt
 /path/**/file[a-b].txt
+\!important!.txt
+file\ with\ space.txt
+\#fileWithHash.txt
+path/!file
 
 # Negated Directories
 !path/
