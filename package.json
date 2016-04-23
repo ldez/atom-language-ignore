@@ -1,6 +1,6 @@
 {
   "name": "language-ignore",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Syntax highlighting and snippets for 'ignore' files",
   "keywords": [
     "ignore",
