@@ -1,6 +1,7 @@
 # Directories
 path/
 path/path/
+path?/path/
 path/*/
 path/**/path/
 path/[a-z]/path/
@@ -14,6 +15,7 @@ path/!path/
 # Files
 file
 file.txt
+file?.txt
 *.txt
 file*.txt
 file[a-b].txt
@@ -39,6 +41,7 @@ path/!file
 # Negated Directories
 !path/
 !path/path/
+!path?/path/
 !path/*/
 !path/**/path/
 !path/[a-z]/path/
