@@ -9,12 +9,15 @@ Adds syntax highlighting to 'ignore' files.
 
 ![language-ignore-gitignore](https://cloud.githubusercontent.com/assets/5674651/14763858/4ae7eae4-09a3-11e6-9adf-94f3d5cdf1d6.png)
 
+
 ## Supported files
 
 - `.gitignore`: references [gitignore](https://git-scm.com/docs/gitignore) and [Ignoring-Files](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files)
 - `.npmignore`: works just like a `.gitignore` [references](https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package)
 - `.coffeelintignore`: works just like a `.gitignore`
+- `.dockerignore` : works just like a `.gitignore` [references](https://docs.docker.com/engine/reference/builder/#dockerignore-file)
 - `.slugignore`: does not support negated `!` patterns. [Heroku - Slug Compiler](https://devcenter.heroku.com/articles/slug-compiler#ignoring-files-with-slugignore)
+
 
 ## Install
 

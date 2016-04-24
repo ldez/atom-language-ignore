@@ -4,6 +4,7 @@ fileTypes: [
   "gitignore"
   "npmignore"
   "coffeelintignore"
+  "dockerignore"
 ]
 maxTokensPerLine: 100
 patterns: [

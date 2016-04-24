@@ -15,7 +15,7 @@ module.exports =
   compileGrammar: (debug) ->
     if atom.inDevMode()
 
-      # gitignore & coffeelintignore & npmignore
+      # gitignore & coffeelintignore & npmignore & dockerignore
       rootGrammar = helper.readGrammarFile 'ignore.cson'
       rootGrammar.name = 'Ignore File (gitignore syntax)'
       rootGrammar.scopeName = 'text.ignore'
@@ -23,6 +23,7 @@ module.exports =
         'gitignore'
         'npmignore'
         'coffeelintignore'
+        'dockerignore'
       ]
 
       partialGrammars = [
