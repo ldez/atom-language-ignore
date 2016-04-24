@@ -60,3 +60,6 @@ module.exports =
         console.log CSON.stringify rootGrammar
       helper.writeGrammarFile rootGrammar, 'language-ignore-slug.cson', do ->
         atom.commands.dispatch 'body', 'window:reload'
+
+    deactivate: ->
+      @subscriptions.dispose()
