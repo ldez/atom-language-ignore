@@ -1,0 +1,36 @@
+name: 'Ignore'
+scopeName: 'text.ignore'
+fileTypes: [
+  'gitignore'
+  'npmignore'
+  'coffeelintignore'
+  'slugignore'
+]
+
+maxTokensPerLine: 100
+
+patterns: [
+    include: '#comment'
+  ,
+    include: '#lines'
+  ,
+    include: '#symbols'
+]
+repository:
+  comment:
+    name: 'comment.line.ignore'
+    match: '^#.*$'
+  symbols:
+    patterns: [
+      include: '#negate-symbols'
+    ,
+      include: '#basic-symbols'
+    ]
+  lines:
+    patterns: [
+        include: '#negate'
+      ,
+        include: '#directory'
+      ,
+        include: '#file'
+    ]

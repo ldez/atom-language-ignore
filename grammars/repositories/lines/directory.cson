@@ -1,0 +1,15 @@
+key: 'directory'
+patterns: [
+  {
+    name: 'line.directory.ignore'
+    match: '^(/)?(.+)(/)$'
+    captures:
+      1: name: 'constant.restriced.directory.ignore'
+      2:
+        name: 'string.directory.content.ignore'
+        patterns: [
+          include: '#symbols'
+        ]
+      3: name: 'constant.character.directory.ignore'
+  }
+]

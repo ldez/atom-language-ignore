@@ -1,0 +1,15 @@
+key: 'file'
+patterns: [
+  {
+    name: 'line.file.ignore'
+    match: '^(/)?(.+)(\\.[\\w]+)?(?<!/)$'
+    captures:
+      1: name: 'constant.restriced.file.ignore'
+      2:
+        name: 'keyword.file.content.ignore'
+        patterns: [
+          include: '#symbols'
+        ]
+      3: name: 'keyword.character.file.extension.ignore'
+  }
+]

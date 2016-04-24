@@ -19,8 +19,11 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "season": "^5.3"
+  },
   "devDependencies": {
     "coffeelint": "^1.15.0"
-  }
+  },
+  "main": "lib/main.coffee"
 }

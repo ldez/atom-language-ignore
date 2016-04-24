@@ -1,0 +1,13 @@
+key: 'negate-symbols'
+patterns: [
+  {
+    name: 'markup.deleted.negate.ignore'
+    match: '(?<!^|\\\\)(!)(.*)'
+    captures:
+      1: name: 'constant.other.symbol.negate.ignore'
+  }
+  {
+    name: 'constant.other.symbol.negate.ignore'
+    match: '(?<!\\\\)!'
+  }
+]
