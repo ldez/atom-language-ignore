@@ -3,10 +3,10 @@ describe 'Ignore grammar', ->
 
   beforeEach ->
     waitsForPromise ->
-      atom.packages.activatePackage('language-ignore')
+      atom.packages.activatePackage 'language-ignore'
 
     runs ->
-      grammar = atom.grammars.grammarForScopeName('text.ignore')
+      grammar = atom.grammars.grammarForScopeName 'text.ignore'
 
   # convenience function during development
   debug = (tokens) ->
