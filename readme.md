@@ -11,10 +11,10 @@ Adds syntax highlighting to 'ignore' files.
 
 ## Supported files
 
-- `.gitignore`: [gitignore](https://git-scm.com/docs/gitignore) and [Ignoring-Files](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files)
-- `.npmignore`: [Syntax](https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package)
+- `.gitignore`: references [gitignore](https://git-scm.com/docs/gitignore) and [Ignoring-Files](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files)
+- `.npmignore`: works just like a `.gitignore` [references](https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package)
 - `.coffeelintignore`: works just like a `.gitignore`
-- `.slugignore`: [Heroku - Slug Compiler](https://devcenter.heroku.com/articles/slug-compiler#ignoring-files-with-slugignore)
+- `.slugignore`: does not support negated `!` patterns. [Heroku - Slug Compiler](https://devcenter.heroku.com/articles/slug-compiler#ignoring-files-with-slugignore)
 
 ## Install
 
