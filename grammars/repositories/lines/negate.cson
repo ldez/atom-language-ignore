@@ -1,13 +1,12 @@
 key: 'negate'
+
 patterns: [
-  {
-    name: 'line.negated.ignore'
-    match: '^(!.+)$'
-    captures:
-      1:
-        name: 'markup.deleted.negate.content.ignore'
-        patterns: [
-          include: '#symbols'
-        ]
-  }
+  name: 'line.negated.ignore'
+  match: '^(!.+)$'
+  captures:
+    1:
+      name: 'markup.deleted.negate.content.ignore'
+      patterns: [
+        include: '#symbols'
+      ]
 ]

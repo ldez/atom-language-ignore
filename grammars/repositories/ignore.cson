@@ -1,20 +1,15 @@
-name: 'Ignore'
-scopeName: 'text.ignore'
-fileTypes: [
-  'gitignore'
-  'npmignore'
-  'coffeelintignore'
-  'slugignore'
-]
+name: ''
+scopeName: ''
+fileTypes: []
 
 maxTokensPerLine: 100
 
 patterns: [
-    include: '#comment'
-  ,
-    include: '#lines'
-  ,
-    include: '#symbols'
+  include: '#comment'
+,
+  include: '#lines'
+,
+  include: '#symbols'
 ]
 repository:
   comment:
@@ -28,9 +23,9 @@ repository:
     ]
   lines:
     patterns: [
-        include: '#negate'
-      ,
-        include: '#directory'
-      ,
-        include: '#file'
+      include: '#negate'
+    ,
+      include: '#directory'
+    ,
+      include: '#file'
     ]
