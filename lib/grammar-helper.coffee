@@ -1,16 +1,16 @@
 CSON = require 'season'
 path = require 'path'
 
-module.exports =
+class GrammarHelper
+
+  constructor: (@rootInputDirectory, @rootOutputDirectory) ->
 
   readGrammarFile: (file) ->
-    rootDirectory = '../grammars/repositories/'
-    filepath = path.join __dirname, rootDirectory, file
+    filepath = path.join __dirname, @rootInputDirectory, file
     CSON.readFileSync filepath
 
-  writeGrammarFile: (grammar, file, cal) ->
-    rootDirectory = '../grammars/'
-    outputFilepath = path.join __dirname, rootDirectory, file
+  writeGrammarFile: (grammar, file) ->
+    outputFilepath = path.join __dirname,  @rootOutputDirectory, file
     CSON.writeFileSync outputFilepath, grammar
 
   appendPartialGrammars: (grammar, partialGrammarFiles) ->
@@ -19,3 +19,5 @@ module.exports =
       if key? and patterns?
         grammar.repository[key] =
           patterns: patterns
+
+module.exports = GrammarHelper

@@ -1,6 +1,6 @@
 {CompositeDisposable} = require 'atom'
 CSON = require 'season'
-helper = require './grammar-helper'
+GrammarHelper = require './grammar-helper'
 
 module.exports =
 
@@ -14,6 +14,8 @@ module.exports =
 
   compileGrammar: (debug) ->
     if atom.inDevMode()
+
+      helper = new GrammarHelper '../grammars/repositories/', '../grammars/'
 
       # gitignore & coffeelintignore & npmignore & dockerignore
       rootGrammar = helper.readGrammarFile 'ignore.cson'
