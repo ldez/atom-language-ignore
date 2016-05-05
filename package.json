@@ -1,6 +1,6 @@
 {
   "name": "language-ignore",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Syntax highlighting for 'ignore' files : gitignore, npmignore, dockerignore, coffeelintignore, ...",
   "keywords": [
     "gitignore",
