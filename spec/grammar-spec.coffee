@@ -1,4 +1,5 @@
 describe 'Ignore grammars', ->
+
   beforeEach ->
     waitsForPromise ->
       atom.packages.activatePackage 'language-ignore'

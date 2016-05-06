@@ -5,62 +5,68 @@ GrammarHelper = require './grammar-helper'
 module.exports =
 
   subscriptions: null
+  debug: false
 
   activate: (state) ->
-    @subscriptions = new CompositeDisposable()
+    return unless atom.inDevMode() and not atom.inSpecMode()
 
-    if atom.inDevMode()
-      @subscriptions.add atom.commands.add 'atom-workspace', 'ignore:compile-grammar-and-reload': => @compileGrammar()
+    @subscriptions = new CompositeDisposable
+    @subscriptions.add atom.commands.add 'atom-workspace', 'ignore:compile-grammar-and-reload': => @compileGrammar()
 
-  compileGrammar: (debug) ->
-    if atom.inDevMode()
+  compileGrammar: ->
+    return unless atom.inDevMode() and not atom.inSpecMode()
 
-      helper = new GrammarHelper '../grammars/repositories/', '../grammars/'
+    helper = new GrammarHelper '../grammars/repositories/', '../grammars/'
 
-      # gitignore & coffeelintignore & npmignore & dockerignore
-      rootGrammar = helper.readGrammarFile 'ignore.cson'
-      rootGrammar.name = 'Ignore File (gitignore syntax)'
-      rootGrammar.scopeName = 'text.ignore'
-      rootGrammar.fileTypes = [
-        'gitignore'
-        'npmignore'
-        'coffeelintignore'
-        'dockerignore'
-      ]
+    # gitignore & coffeelintignore & npmignore & dockerignore
+    promiseIgnore = helper.readGrammarFile 'ignore.cson'
+      .then (rootGrammar) ->
+        console.log "A1"
+        rootGrammar.name = 'Ignore File (gitignore syntax)'
+        rootGrammar.scopeName = 'text.ignore'
+        rootGrammar.fileTypes = [
+          'gitignore'
+          'npmignore'
+          'coffeelintignore'
+          'dockerignore'
+        ]
+        partialGrammars = [
+          '/symbols/negate-symbols.cson'
+          '/symbols/basic-symbols.cson'
+          '/lines/negate.cson'
+          '/lines/directory.cson'
+          '/lines/file.cson'
+        ]
+        helper.appendPartialGrammars rootGrammar, partialGrammars
+          .then =>
+            console.log "A"
+            if @debug then console.log CSON.stringify rootGrammar
+            helper.writeGrammarFile rootGrammar, 'language-ignore.cson'
 
-      partialGrammars = [
-        '/symbols/negate-symbols.cson'
-        '/symbols/basic-symbols.cson'
-        '/lines/negate.cson'
-        '/lines/directory.cson'
-        '/lines/file.cson'
-      ]
-      helper.appendPartialGrammars rootGrammar, partialGrammars
+    # slugignore
+    promiseSlugIgnore = helper.readGrammarFile 'ignore.cson'
+      .then (rootGrammar) ->
+        console.log "B1"
+        rootGrammar.name = 'Ignore File for Slug compiler (gitignore syntax)'
+        rootGrammar.scopeName = 'text.ignore.slugignore'
+        rootGrammar.fileTypes = [
+          'slugignore'
+        ]
+        partialGrammars = [
+          '/symbols/negate-illegal-symbols.cson'
+          '/symbols/basic-symbols.cson'
+          '/lines/negate.cson'
+          '/lines/directory.cson'
+          '/lines/file.cson'
+        ]
+        helper.appendPartialGrammars rootGrammar, partialGrammars
+          .then =>
+            console.log "B"
+            if @debug then console.log CSON.stringify rootGrammar
+            helper.writeGrammarFile rootGrammar, 'language-ignore-slug.cson'
 
-      if debug?
-        console.log CSON.stringify rootGrammar
-      helper.writeGrammarFile rootGrammar, 'language-ignore.cson'
-
-      # slugignore
-      rootGrammar = helper.readGrammarFile 'ignore.cson'
-      rootGrammar.name = 'Ignore File for Slug compiler (gitignore syntax)'
-      rootGrammar.scopeName = 'text.ignore.slugignore'
-      rootGrammar.fileTypes = [
-        'slugignore'
-      ]
-
-      partialGrammars = [
-        '/symbols/negate-illegal-symbols.cson'
-        '/symbols/basic-symbols.cson'
-        '/lines/negate.cson'
-        '/lines/directory.cson'
-        '/lines/file.cson'
-      ]
-      helper.appendPartialGrammars rootGrammar, partialGrammars
-
-      if debug?
-        console.log CSON.stringify rootGrammar
-      helper.writeGrammarFile rootGrammar, 'language-ignore-slug.cson', do ->
+    Promise.all [promiseIgnore, promiseSlugIgnore]
+      .then ->
         atom.commands.dispatch 'body', 'window:reload'
 
     deactivate: ->
