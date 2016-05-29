@@ -2,8 +2,8 @@
 
 [![Atom Package](https://img.shields.io/apm/v/language-ignore.svg)](https://atom.io/packages/language-ignore)
 [![Atom Package Downloads](https://img.shields.io/apm/dm/language-ignore.svg)](https://atom.io/packages/language-ignore)
-[![Build Status](https://travis-ci.org/ldez/atom-language-ignore.svg?branch=master)](https://travis-ci.org/ldez/atom-language-ignore)
-[![Build status](https://ci.appveyor.com/api/projects/status/hqhpnne2dungfbj1?svg=true)](https://ci.appveyor.com/project/ldez/atom-language-ignore)
+[![Build Status (Linux & OSX)](https://travis-ci.org/ldez/atom-language-ignore.svg?branch=master)](https://travis-ci.org/ldez/atom-language-ignore)
+[![Build status (Windows)](https://ci.appveyor.com/api/projects/status/hqhpnne2dungfbj1?svg=true)](https://ci.appveyor.com/project/ldez/atom-language-ignore)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/ldez/atom-language-ignore/blob/master/LICENSE.md)
 
 Adds syntax highlighting to 'ignore' files.
