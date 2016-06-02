@@ -14,7 +14,7 @@ patterns: [
   match: '\\\\'
 ,
   name: 'range.ignore'
-  match: '(\\[)([\\w-]+)(\\])'
+  match: '(\\[)([\\w\\-!]+)(\\])'
   captures:
     1: name: 'constant.other.symbol.range.begin.ignore'
     2: name: 'constant.other.symbol.range.content.ignore'

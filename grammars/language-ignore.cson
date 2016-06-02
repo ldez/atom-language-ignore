@@ -78,7 +78,7 @@ repository:
       }
       {
         name: "range.ignore"
-        match: "(\\[)([\\w-]+)(\\])"
+        match: "(\\[)([\\w\\-!]+)(\\])"
         captures:
           "1":
             name: "constant.other.symbol.range.begin.ignore"
@@ -86,21 +86,6 @@ repository:
             name: "constant.other.symbol.range.content.ignore"
           "3":
             name: "constant.other.symbol.range.end.ignore"
-      }
-    ]
-  negate:
-    patterns: [
-      {
-        name: "line.negated.ignore"
-        match: "^(!.+)$"
-        captures:
-          "1":
-            name: "markup.deleted.negate.content.ignore"
-            patterns: [
-              {
-                include: "#symbols"
-              }
-            ]
       }
     ]
   directory:
@@ -120,6 +105,21 @@ repository:
             ]
           "3":
             name: "constant.character.directory.ignore"
+      }
+    ]
+  negate:
+    patterns: [
+      {
+        name: "line.negated.ignore"
+        match: "^(!.+)$"
+        captures:
+          "1":
+            name: "markup.deleted.negate.content.ignore"
+            patterns: [
+              {
+                include: "#symbols"
+              }
+            ]
       }
     ]
   file:
