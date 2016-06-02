@@ -8,6 +8,7 @@
     "coffeelintignore",
     "dockerignore",
     "slugignore",
+    "hgignore",
     "atomignore",
     "ignore",
     "git",

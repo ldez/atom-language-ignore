@@ -62,6 +62,26 @@ module.exports =
             if @debug then console.log CSON.stringify rootGrammar
             helper.writeGrammarFile rootGrammar, 'language-ignore-slug.cson'
 
+    # hgignore
+    promiseSlugIgnore = helper.readGrammarFile 'ignore.cson'
+      .then (rootGrammar) ->
+        rootGrammar.name = 'Ignore File for Mecurial'
+        rootGrammar.scopeName = 'text.ignore.hgignore'
+        rootGrammar.fileTypes = [
+          'hgignore'
+        ]
+        partialGrammars = [
+          '/symbols/negate-illegal-symbols.cson'
+          '/symbols/basic-symbols.cson'
+          '/lines/negate.cson'
+          '/lines/directory.cson'
+          '/lines/file.cson'
+        ]
+        helper.appendPartialGrammars rootGrammar, partialGrammars
+          .then =>
+            if @debug then console.log CSON.stringify rootGrammar
+            helper.writeGrammarFile rootGrammar, 'language-ignore-mercurial.cson'
+
     Promise.all [promiseIgnore, promiseSlugIgnore]
       .then ->
         atom.commands.dispatch 'body', 'window:reload'

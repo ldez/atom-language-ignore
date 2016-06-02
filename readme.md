@@ -19,6 +19,7 @@ Adds syntax highlighting to 'ignore' files.
 - `.coffeelintignore`: works just like a `.gitignore`.
 - `.slugignore`: does not support negated `!` patterns. [Heroku - Slug Compiler](https://devcenter.heroku.com/articles/slug-compiler#ignoring-files-with-slugignore)
 - `.atomignore`: works just like a `.gitignore`. [tree-ignore](https://atom.io/packages/tree-ignore)
+- `.hgignore`: references [hgignore](https://www.mercurial-scm.org/wiki/.hgignore) (currently only glop patterns)
 
 ## Install
 
