@@ -21,7 +21,6 @@ module.exports =
     # gitignore & coffeelintignore & npmignore & dockerignore
     promiseIgnore = helper.readGrammarFile 'ignore.cson'
       .then (rootGrammar) ->
-        console.log "A1"
         rootGrammar.name = 'Ignore File (gitignore syntax)'
         rootGrammar.scopeName = 'text.ignore'
         rootGrammar.fileTypes = [
@@ -39,14 +38,12 @@ module.exports =
         ]
         helper.appendPartialGrammars rootGrammar, partialGrammars
           .then =>
-            console.log "A"
             if @debug then console.log CSON.stringify rootGrammar
             helper.writeGrammarFile rootGrammar, 'language-ignore.cson'
 
     # slugignore
     promiseSlugIgnore = helper.readGrammarFile 'ignore.cson'
       .then (rootGrammar) ->
-        console.log "B1"
         rootGrammar.name = 'Ignore File for Slug compiler (gitignore syntax)'
         rootGrammar.scopeName = 'text.ignore.slugignore'
         rootGrammar.fileTypes = [
@@ -61,7 +58,6 @@ module.exports =
         ]
         helper.appendPartialGrammars rootGrammar, partialGrammars
           .then =>
-            console.log "B"
             if @debug then console.log CSON.stringify rootGrammar
             helper.writeGrammarFile rootGrammar, 'language-ignore-slug.cson'
 
