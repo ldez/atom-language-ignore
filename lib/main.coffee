@@ -28,6 +28,7 @@ module.exports =
           'npmignore'
           'coffeelintignore'
           'dockerignore'
+          'atomignore'
         ]
         partialGrammars = [
           '/symbols/negate-symbols.cson'
