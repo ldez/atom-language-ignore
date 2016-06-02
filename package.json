@@ -8,6 +8,7 @@
     "coffeelintignore",
     "dockerignore",
     "slugignore",
+    "atomignore",
     "ignore",
     "git",
     "npm",
