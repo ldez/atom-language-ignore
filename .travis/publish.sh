@@ -4,7 +4,7 @@ set -e
 ## Custom variables
 USER_EMAIL="lfernandez.dev@gmail.com"
 USER_NAME="Ludovic Fernandez"
-GIT_REPOSITORY='git@github.com:ldez/atom-language-csv.git'
+GIT_REPOSITORY='git@github.com:ldez/atom-language-ignore.git'
 SSH_KEY_NAME="travis_rsa"
 AUTHORIZED_BRANCH='master'
 PUBLISH_TYPE=${PUBLISH_TYPE:="patch"}
