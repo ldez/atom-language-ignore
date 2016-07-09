@@ -10,6 +10,7 @@
     "slugignore",
     "hgignore",
     "atomignore",
+    "vscodeignore",
     "ignore",
     "git",
     "npm",

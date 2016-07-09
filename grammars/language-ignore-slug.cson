@@ -54,34 +54,23 @@ repository:
         match: "(?<!\\\\)!"
       }
     ]
-  "basic-symbols":
+  file:
     patterns: [
       {
-        name: "constant.other.symbol.asterisk.ignore"
-        match: "\\*"
-      }
-      {
-        name: "constant.other.symbol.questionmark.ignore"
-        match: "\\?"
-      }
-      {
-        name: "constant.separator.directory.ignore"
-        match: "/"
-      }
-      {
-        name: "variable.character.escape.ignore"
-        match: "\\\\"
-      }
-      {
-        name: "range.ignore"
-        match: "(\\[)([\\w\\-!]+)(\\])"
+        name: "line.file.ignore"
+        match: "^(/)?(.+)(\\.[\\w]+)?(?<!/)$"
         captures:
           "1":
-            name: "constant.other.symbol.range.begin.ignore"
+            name: "constant.restriced.file.ignore"
           "2":
-            name: "constant.other.symbol.range.content.ignore"
+            name: "keyword.file.content.ignore"
+            patterns: [
+              {
+                include: "#symbols"
+              }
+            ]
           "3":
-            name: "constant.other.symbol.range.end.ignore"
+            name: "keyword.character.file.extension.ignore"
       }
     ]
   negate:
@@ -118,22 +107,33 @@ repository:
             name: "constant.character.directory.ignore"
       }
     ]
-  file:
+  "basic-symbols":
     patterns: [
       {
-        name: "line.file.ignore"
-        match: "^(/)?(.+)(\\.[\\w]+)?(?<!/)$"
+        name: "constant.other.symbol.asterisk.ignore"
+        match: "\\*"
+      }
+      {
+        name: "constant.other.symbol.questionmark.ignore"
+        match: "\\?"
+      }
+      {
+        name: "constant.separator.directory.ignore"
+        match: "/"
+      }
+      {
+        name: "variable.character.escape.ignore"
+        match: "\\\\"
+      }
+      {
+        name: "range.ignore"
+        match: "(\\[)([\\w\\-!]+)(\\])"
         captures:
           "1":
-            name: "constant.restriced.file.ignore"
+            name: "constant.other.symbol.range.begin.ignore"
           "2":
-            name: "keyword.file.content.ignore"
-            patterns: [
-              {
-                include: "#symbols"
-              }
-            ]
+            name: "constant.other.symbol.range.content.ignore"
           "3":
-            name: "keyword.character.file.extension.ignore"
+            name: "constant.other.symbol.range.end.ignore"
       }
     ]

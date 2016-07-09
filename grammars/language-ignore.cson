@@ -6,6 +6,7 @@ fileTypes: [
   "coffeelintignore"
   "dockerignore"
   "atomignore"
+  "vscodeignore"
 ]
 maxTokensPerLine: 100
 patterns: [
@@ -58,6 +59,59 @@ repository:
         match: "(?<!\\\\)!"
       }
     ]
+  negate:
+    patterns: [
+      {
+        name: "line.negated.ignore"
+        match: "^(!.+)$"
+        captures:
+          "1":
+            name: "markup.deleted.negate.content.ignore"
+            patterns: [
+              {
+                include: "#symbols"
+              }
+            ]
+      }
+    ]
+  directory:
+    patterns: [
+      {
+        name: "line.directory.ignore"
+        match: "^(/)?(.+)(/)$"
+        captures:
+          "1":
+            name: "constant.restriced.directory.ignore"
+          "2":
+            name: "string.directory.content.ignore"
+            patterns: [
+              {
+                include: "#symbols"
+              }
+            ]
+          "3":
+            name: "constant.character.directory.ignore"
+      }
+    ]
+  file:
+    patterns: [
+      {
+        name: "line.file.ignore"
+        match: "^(/)?(.+)(\\.[\\w]+)?(?<!/)$"
+        captures:
+          "1":
+            name: "constant.restriced.file.ignore"
+          "2":
+            name: "keyword.file.content.ignore"
+            patterns: [
+              {
+                include: "#symbols"
+              }
+            ]
+          "3":
+            name: "keyword.character.file.extension.ignore"
+      }
+    ]
   "basic-symbols":
     patterns: [
       {
@@ -86,58 +140,5 @@ repository:
             name: "constant.other.symbol.range.content.ignore"
           "3":
             name: "constant.other.symbol.range.end.ignore"
-      }
-    ]
-  directory:
-    patterns: [
-      {
-        name: "line.directory.ignore"
-        match: "^(/)?(.+)(/)$"
-        captures:
-          "1":
-            name: "constant.restriced.directory.ignore"
-          "2":
-            name: "string.directory.content.ignore"
-            patterns: [
-              {
-                include: "#symbols"
-              }
-            ]
-          "3":
-            name: "constant.character.directory.ignore"
-      }
-    ]
-  negate:
-    patterns: [
-      {
-        name: "line.negated.ignore"
-        match: "^(!.+)$"
-        captures:
-          "1":
-            name: "markup.deleted.negate.content.ignore"
-            patterns: [
-              {
-                include: "#symbols"
-              }
-            ]
-      }
-    ]
-  file:
-    patterns: [
-      {
-        name: "line.file.ignore"
-        match: "^(/)?(.+)(\\.[\\w]+)?(?<!/)$"
-        captures:
-          "1":
-            name: "constant.restriced.file.ignore"
-          "2":
-            name: "keyword.file.content.ignore"
-            patterns: [
-              {
-                include: "#symbols"
-              }
-            ]
-          "3":
-            name: "keyword.character.file.extension.ignore"
       }
     ]

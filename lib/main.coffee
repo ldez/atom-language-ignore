@@ -18,7 +18,7 @@ module.exports =
 
     helper = new GrammarHelper '../grammars/repositories/', '../grammars/'
 
-    # gitignore & coffeelintignore & npmignore & dockerignore
+    # gitignore base
     promiseIgnore = helper.readGrammarFile 'ignore.cson'
       .then (rootGrammar) ->
         rootGrammar.name = 'Ignore File (gitignore syntax)'
@@ -29,6 +29,7 @@ module.exports =
           'coffeelintignore'
           'dockerignore'
           'atomignore'
+          'vscodeignore'
         ]
         partialGrammars = [
           '/symbols/negate-symbols.cson'
