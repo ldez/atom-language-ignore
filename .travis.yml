@@ -21,6 +21,7 @@ branches:
 env:
   global:
     - APM_TEST_PACKAGES=""
+    - AUTHORIZED_BRANCH="master"
 
   matrix:
     - ATOM_CHANNEL=stable
