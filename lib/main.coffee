@@ -30,6 +30,7 @@ module.exports =
           'dockerignore'
           'atomignore'
           'vscodeignore'
+          'eslintignore'
         ]
         partialGrammars = [
           '/symbols/negate-symbols.cson'
