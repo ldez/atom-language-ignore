@@ -8,6 +8,9 @@ module.exports =
   debug: false
 
   activate: (state) ->
+    atom.grammars.removeGrammarForScopeName('source.dockerignore')
+    console.log 'desactivate syntax highlighting for "source.dockerignore" from https://atom.io/packages/language-docker'
+
     return unless atom.inDevMode() and not atom.inSpecMode()
 
     @subscriptions = new CompositeDisposable
