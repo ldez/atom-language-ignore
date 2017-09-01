@@ -8,8 +8,10 @@ module.exports =
   debug: false
 
   activate: (state) ->
-    atom.grammars.removeGrammarForScopeName('source.dockerignore')
-    console.log 'desactivate syntax highlighting for "source.dockerignore" from https://atom.io/packages/language-docker'
+    if  not dockerIgnoreScope
+      console.log 'Desactivate syntax highlighting for "source.dockerignore" from https://atom.io/packages/language-docker.'
+      customFileTypes['text.ignore'] = ['dockerignore']
+      atom.config.set 'core.customFileTypes', customFileTypes
 
     return unless atom.inDevMode() and not atom.inSpecMode()
 
