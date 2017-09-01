@@ -32,3 +32,27 @@ Or
 ```bash
 apm install language-ignore
 ```
+
+## Troubleshooting
+
+If you have problem with the `.dockerignore` files:
+
+- In your Atom configuration: `Edit` > `Config...`
+- Add the following lines in the `[core]` section:
+```coffee
+  customFileTypes:
+    "text.ignore": [
+      ".dockerignore"
+    ]
+```
+
+Example:
+
+```coffee
+"*":
+  core:
+    customFileTypes:
+      "text.ignore": [
+        ".dockerignore"
+      ]
+```

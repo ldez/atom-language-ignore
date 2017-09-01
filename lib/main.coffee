@@ -8,6 +8,28 @@ module.exports =
   debug: false
 
   activate: (state) ->
+    # Fix dockerignore conflicts with https://atom.io/packages/language-docker
+    languageDockerPackage = atom.packages.getAvailablePackageNames().find (name) -> name is 'language-docker'
+    if languageDockerPackage?
+      customFileTypes = atom.config.get 'core.customFileTypes'
+      if not customFileTypes?
+        customFileTypes = 'text.ignore': ['.dockerignore']
+        atom.config.set 'core.customFileTypes', customFileTypes
+        atom.grammars.removeGrammarForScopeName('source.dockerignore')
+        console.log 'Desactivate syntax highlighting for "source.dockerignore" from https://atom.io/packages/language-docker.'
+      else if not customFileTypes['text.ignore']?
+        customFileTypes['text.ignore'] = ['.dockerignore']
+        atom.config.set 'core.customFileTypes', customFileTypes
+        atom.grammars.removeGrammarForScopeName('source.dockerignore')
+        console.log 'Desactivate syntax highlighting for "source.dockerignore" from https://atom.io/packages/language-docker.'
+      else
+        dockerIgnoreExtension = customFileTypes['text.ignore'].find (ext) -> ext is '.dockerignore'
+        if not dockerIgnoreExtension?
+          customFileTypes['text.ignore'].push('.dockerignore')
+          atom.config.set 'core.customFileTypes', customFileTypes
+          atom.grammars.removeGrammarForScopeName('source.dockerignore')
+          console.log 'Desactivate syntax highlighting for "source.dockerignore" from https://atom.io/packages/language-docker.'
+
     return unless atom.inDevMode() and not atom.inSpecMode()
 
     @subscriptions = new CompositeDisposable
