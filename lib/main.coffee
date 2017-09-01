@@ -8,6 +8,8 @@ module.exports =
   debug: false
 
   activate: (state) ->
+    dockerIgnoreScope = customFileTypes['text.ignore']
+
     if  not dockerIgnoreScope
       console.log 'Desactivate syntax highlighting for "source.dockerignore" from https://atom.io/packages/language-docker.'
       customFileTypes['text.ignore'] = ['dockerignore']
