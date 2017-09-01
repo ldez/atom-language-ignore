@@ -54,6 +54,36 @@ repository:
         match: "(?<!\\\\)!"
       }
     ]
+  "basic-symbols":
+    patterns: [
+      {
+        name: "constant.other.symbol.asterisk.ignore"
+        match: "\\*"
+      }
+      {
+        name: "constant.other.symbol.questionmark.ignore"
+        match: "\\?"
+      }
+      {
+        name: "constant.separator.directory.ignore"
+        match: "/"
+      }
+      {
+        name: "variable.character.escape.ignore"
+        match: "\\\\"
+      }
+      {
+        name: "range.ignore"
+        match: "(\\[)([\\w\\-!]+)(\\])"
+        captures:
+          "1":
+            name: "constant.other.symbol.range.begin.ignore"
+          "2":
+            name: "constant.other.symbol.range.content.ignore"
+          "3":
+            name: "constant.other.symbol.range.end.ignore"
+      }
+    ]
   negate:
     patterns: [
       {
@@ -105,35 +135,5 @@ repository:
             ]
           "3":
             name: "keyword.character.file.extension.ignore"
-      }
-    ]
-  "basic-symbols":
-    patterns: [
-      {
-        name: "constant.other.symbol.asterisk.ignore"
-        match: "\\*"
-      }
-      {
-        name: "constant.other.symbol.questionmark.ignore"
-        match: "\\?"
-      }
-      {
-        name: "constant.separator.directory.ignore"
-        match: "/"
-      }
-      {
-        name: "variable.character.escape.ignore"
-        match: "\\\\"
-      }
-      {
-        name: "range.ignore"
-        match: "(\\[)([\\w\\-!]+)(\\])"
-        captures:
-          "1":
-            name: "constant.other.symbol.range.begin.ignore"
-          "2":
-            name: "constant.other.symbol.range.content.ignore"
-          "3":
-            name: "constant.other.symbol.range.end.ignore"
       }
     ]
