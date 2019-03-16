@@ -22,7 +22,7 @@ Adds syntax highlighting to 'ignore' files.
 - `.hgignore`: references [hgignore](https://www.mercurial-scm.org/wiki/.hgignore) (currently only glop patterns)
 - `.vscodeignore`: works just like a `.gitignore` [references](https://code.visualstudio.com/docs/tools/vscecli#_advance-usage)
 - `.eslintignore`:  works just like a `.gitignore` [references](https://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories)
-- `.prettierignore`:  works just like a `.gitignore` [references](https://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories)
+- `.prettierignore`:  works just like a `.gitignore` [references](https://prettier.io/docs/en/ignore.html#ignoring-files)
 
 ## Install
 
