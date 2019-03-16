@@ -1,7 +1,7 @@
 {
   "name": "language-ignore",
   "version": "1.7.4",
-  "description": "Syntax highlighting for 'ignore' files : gitignore, npmignore, dockerignore, coffeelintignore, ...",
+  "description": "Syntax highlighting for 'ignore' files : gitignore, npmignore, dockerignore, prettierignore, ...",
   "keywords": [
     "gitignore",
     "npmignore",
@@ -10,6 +10,7 @@
     "slugignore",
     "hgignore",
     "atomignore",
+    "prettierignore",
     "vscodeignore",
     "ignore",
     "git",

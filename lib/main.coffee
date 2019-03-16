@@ -53,6 +53,7 @@ module.exports =
           'atomignore'
           'vscodeignore'
           'eslintignore'
+          'prettierignore'
         ]
         partialGrammars = [
           '/symbols/negate-symbols.cson'
