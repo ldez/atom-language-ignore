@@ -1,10 +1,9 @@
-# Ignore files Package for Atom
+# Ignore files Package for Pulsar/Atom
 
-[![Atom Package](https://img.shields.io/apm/v/language-ignore.svg)](https://atom.io/packages/language-ignore)
-[![Atom Package Downloads](https://img.shields.io/apm/dm/language-ignore.svg)](https://atom.io/packages/language-ignore)
-[![Build Status (Linux & OSX)](https://travis-ci.org/ldez/atom-language-ignore.svg?branch=master)](https://travis-ci.org/ldez/atom-language-ignore)
 [![Build status (Windows)](https://ci.appveyor.com/api/projects/status/hqhpnne2dungfbj1?svg=true)](https://ci.appveyor.com/project/ldez/atom-language-ignore)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/ldez/atom-language-ignore/blob/master/LICENSE.md)
+
+[![language-ignore](https://image.pulsar-edit.dev/packages/language-ignore)](https://web.pulsar-edit.dev/packages/language-ignore)
 
 Adds syntax highlighting to 'ignore' files.
 
@@ -32,14 +31,14 @@ Settings/Preferences > Install > Search for `language-ignore`
 Or
 
 ```bash
-apm install language-ignore
+pulsar -p install language-ignore
 ```
 
 ## Troubleshooting
 
 If you have problem with the `.dockerignore` files:
 
-- In your Atom configuration: `Edit` > `Config...`
+- In your Pulsar configuration: `Edit` > `Config...`
 - Add the following lines in the `[core]` section:
 ```coffee
   customFileTypes:
