@@ -107,6 +107,26 @@ module.exports =
             if @debug then console.log CSON.stringify rootGrammar
             helper.writeGrammarFile rootGrammar, 'language-ignore-mercurial.cson'
 
+    # gcloudignore
+    promiseSlugIgnore = helper.readGrammarFile 'ignore.cson'
+      .then (rootGrammar) ->
+        rootGrammar.name = 'Ignore File for gcloudignore (modified gitignore syntax)'
+        rootGrammar.scopeName = 'text.ignore.gcloudignore'
+        rootGrammar.fileTypes = [
+          'gcloudignore'
+        ]
+        partialGrammars = [
+          '/symbols/negate-illegal-symbols.cson'
+          '/symbols/basic-symbols.cson'
+          '/lines/negate.cson'
+          '/lines/directory.cson'
+          '/lines/file.cson'
+        ]
+        helper.appendPartialGrammars rootGrammar, partialGrammars
+          .then =>
+            if @debug then console.log CSON.stringify rootGrammar
+            helper.writeGrammarFile rootGrammar, 'language-ignore-gcloud.cson'
+
     Promise.all [promiseIgnore, promiseSlugIgnore]
       .then ->
         atom.commands.dispatch 'body', 'window:reload'

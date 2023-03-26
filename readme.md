@@ -23,6 +23,7 @@ Adds syntax highlighting to 'ignore' files.
 - `.vscodeignore`: works just like a `.gitignore` [references](https://code.visualstudio.com/docs/tools/vscecli#_advance-usage)
 - `.eslintignore`:  works just like a `.gitignore` [references](https://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories)
 - `.prettierignore`:  works just like a `.gitignore` [references](https://prettier.io/docs/en/ignore.html#ignoring-files)
+- `.gcloudignore` : supports importing other `.gitignore` style files [references](https://cloud.google.com/sdk/gcloud/reference/topic/gcloudignore)
 
 ## Install
 
